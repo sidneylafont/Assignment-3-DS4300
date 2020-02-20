@@ -13,9 +13,18 @@ def queryCatalog(category, dictOfSpecs):
 
 
 def main():
-    dict_of_specs = {"diameter": 44, "brand": "Tommy Hilfiger", "dial-color": "beige"}
-    print(queryCatalog("watch", dict_of_specs))
+    dict_of_specs_1 = {"diameter": 44, "brand": "Tommy Hilfiger", "dial-color": "beige"}
+    print(queryCatalog("watch", dict_of_specs_1))
+    # returns [{'_id': ObjectId('5e4db15311d293698b595b39'), 'id': 1.0, 'category': 'watch', 'diameter': 44.0, 'brand': 'Tommy Hilfiger', 'dial-color': 'beige'}]
 
+    dict_of_specs_2 = {"brand": "Tommy Hilfiger"}
+    print(queryCatalog("watch", dict_of_specs_2))
+    # returns [{'_id': ObjectId('5e4db15311d293698b595b39'), 'id': 1.0, 'category': 'watch', 'diameter': 44.0, 'brand': 'Tommy Hilfiger', 'dial-color': 'beige'},
+    # {'_id': ObjectId('5e4db19811d293698b595b3a'), 'id': 2.0, 'category': 'watch', 'diameter': 30.0, 'brand': 'Tommy Hilfiger', 'dial-color': 'red'}]
+
+    dict_of_specs_3 = {"diameter": 100}
+    print(queryCatalog("wine", dict_of_specs_3))
+    # returns [] because wines don't have diameters
 
 main()
 
